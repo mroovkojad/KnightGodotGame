@@ -246,6 +246,9 @@ autoplay = "position"
 [node name="Coin" parent="." instance=ExtResource("5_x52jk")]
 position = Vector2(-47, -44)
 
+[node name="Coin" parent="Coin" instance=ExtResource("5_x52jk")]
+position = Vector2(-88, 80)
+
 [node name="Coin2" parent="." instance=ExtResource("5_x52jk")]
 position = Vector2(73, -82)
 
