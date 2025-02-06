@@ -1,14 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqkd3t2tqkg51"]
+[gd_scene load_steps=3 format=3 uid="uid://c2g4bl41i6e40"]
 
-[ext_resource type="Texture2D" uid="uid://dfp62bjdbphhl" path="res://assets/sprites/platforms.png" id="1_viylt"]
+[ext_resource type="Texture2D" uid="uid://dfp62bjdbphhl" path="res://assets/sprites/platforms.png" id="1_7vjvc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l44sv"]
 size = Vector2(30, 8)
 
-[node name="Static Green Platform" type="AnimatableBody2D"]
+[node name="Platform" type="AnimatableBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_viylt")
+texture = ExtResource("1_7vjvc")
 region_enabled = true
 region_rect = Rect2(16, 0, 32, 9)
 
