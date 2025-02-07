@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://d38ck5q24ndto"]
+[gd_scene load_steps=19 format=4 uid="uid://d38ck5q24ndto"]
 
 [ext_resource type="PackedScene" uid="uid://ctqexyv40xg63" path="res://scenes/player.tscn" id="1_1yo8n"]
 [ext_resource type="Texture2D" uid="uid://bkkyfegu7sl6v" path="res://assets/sprites/world_tileset.png" id="2_klwu2"]
@@ -316,7 +316,8 @@ sources/0 = SubResource("TileSetAtlasSource_shqqe")
 distance = 7.0
 
 [sub_resource type="Animation" id="Animation_rc6hl"]
-length = 0.001
+length = 1.5
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -324,10 +325,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(337, 21)]
+"values": [Vector2(337, 21), Vector2(449, 21)]
 }
 
 [sub_resource type="Animation" id="Animation_k6m7s"]
@@ -352,6 +353,44 @@ tracks/0/keys = {
 _data = {
 "RESET": SubResource("Animation_rc6hl"),
 "position": SubResource("Animation_k6m7s")
+}
+
+[sub_resource type="Animation" id="Animation_cnwci"]
+resource_name = "position"
+length = 1.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(593, 21), Vector2(593, -74)]
+}
+
+[sub_resource type="Animation" id="Animation_qfng3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(593, 21)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y4r33"]
+_data = {
+"RESET": SubResource("Animation_qfng3"),
+"position": SubResource("Animation_cnwci")
 }
 
 [node name="Game" type="Node2D"]
@@ -421,12 +460,24 @@ shape = SubResource("WorldBoundaryShape2D_5tqm7")
 position = Vector2(-47, 12)
 
 [node name="AnimatedYellowPlatform" parent="Platforms" instance=ExtResource("4_rvt5r")]
+visible = false
 position = Vector2(337, 21)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/AnimatedYellowPlatform"]
 libraries = {
 "": SubResource("AnimationLibrary_gwhhx")
 }
+autoplay = "RESET"
+
+[node name="AnimatedYellowPlatformLift" parent="Platforms" instance=ExtResource("4_rvt5r")]
+position = Vector2(593, 21)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/AnimatedYellowPlatformLift"]
+libraries = {
+"": SubResource("AnimationLibrary_y4r33")
+}
 autoplay = "position"
+
+[node name="Enemies" type="Node" parent="."]
 
 [connection signal="body_entered" from="KillZones/Killzone" to="KillZones/Killzone" method="OnBodyEntered"]
