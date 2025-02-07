@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://hro0u3gopx10"]
+
+[ext_resource type="Texture2D" uid="uid://ckr0ypdotvsfy" path="res://assets/sprites/slime_purple.png" id="1_hl730"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1td7"]
+atlas = ExtResource("1_hl730")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8nbm"]
+atlas = ExtResource("1_hl730")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgmfq"]
+atlas = ExtResource("1_hl730")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnmsy"]
+atlas = ExtResource("1_hl730")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tcnho"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1td7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8nbm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgmfq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hnmsy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="EnemySlime" type="Node"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_tcnho")
+autoplay = "default"
+frame_progress = 0.417972
