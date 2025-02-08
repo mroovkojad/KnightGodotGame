@@ -25,9 +25,10 @@
   - Added vscode launch and tasks [2] 4:20
   - Added Dying 20:30
 #### Video List
-1. [Tilemap Physics in Godot 4.3+](https://www.youtube.com/watch?v=19rY6kzt_Rs) (Youtube)
-2. [Using Godot + C# + Visual Studio Code](https://www.youtube.com/watch?v=Yi1iIM-B7XQ) (Youtube)
-3. [Setup C# Godot 4 Build and Debugging in VS Code | Quick guide + DETAILED explanations](https://www.youtube.com/watch?v=PhrwjHdsALM) (Youtube)
+1. [Tilemap Physics in Godot 4.3+](https://www.youtube.com/watch?v=19rY6kzt_Rs)
+2. [Using Godot + C# + Visual Studio Code](https://www.youtube.com/watch?v=Yi1iIM-B7XQ)
+3. [Setup C# Godot 4 Build and Debugging in VS Code | Quick guide + DETAILED explanations](https://www.youtube.com/watch?v=PhrwjHdsALM)
+4. [Smooth Up & Down Stair Handling | Godot 4 FPS Controller Tutorial](https://www.youtube.com/watch?v=Tb-R3l0SQdc)
 
 ## Other Readme documents
 
