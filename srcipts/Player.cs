@@ -12,7 +12,8 @@ public partial class Player : CharacterBody2D
 		animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 	}
 
-	public void flipSprite(Vector2 velocity, AnimatedSprite2D animatedSprite){
+	public void flipSprite(Vector2 velocity, AnimatedSprite2D animatedSprite)
+	{
 		switch (velocity.X)
 		{
 			case float x when x > 0:
@@ -23,6 +24,26 @@ public partial class Player : CharacterBody2D
 				break;
 			default:
 				break;
+		}
+	}
+
+	public void playAnimation(Vector2 velocity, AnimatedSprite2D animatedSprite)
+	{
+		if (IsOnFloor())
+		{
+			switch (velocity.X)
+			{
+				case float x when x > 0:
+					animatedSprite.Play("run");
+					break;
+				default:
+					animatedSprite.Play("idle");
+					break;
+			}
+		}
+		else
+		{
+			animatedSprite.Play("jump");
 		}
 	}
 
@@ -54,6 +75,7 @@ public partial class Player : CharacterBody2D
 			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
 		}
 
+		playAnimation(velocity, animatedSprite);
 		flipSprite(velocity, animatedSprite);
 
 		Velocity = velocity;
