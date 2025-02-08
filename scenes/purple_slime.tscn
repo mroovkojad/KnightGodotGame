@@ -39,12 +39,13 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xf6lh"]
-size = Vector2(10, 11)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyqfl"]
+size = Vector2(20, 25.9253)
 
 [node name="PurpleSlime" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 4
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_8xaqy")
 autoplay = "default"
@@ -53,5 +54,8 @@ frame_progress = 0.917442
 [node name="Killzone" parent="." instance=ExtResource("2_qlw0r")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(0, -5.5)
-shape = SubResource("RectangleShape2D_xf6lh")
+z_index = 4
+position = Vector2(0, -5.1162)
+rotation = 3.14159
+scale = Vector2(0.489463, -0.37676)
+shape = SubResource("RectangleShape2D_jyqfl")

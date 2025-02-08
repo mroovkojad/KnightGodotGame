@@ -10,6 +10,7 @@ public partial class killzone : Area2D
 		timer = GetNode<Timer>("Timer");
 		timer.Timeout += OnTimerTimeout;
 		Connect("body_entered", new Callable(this, nameof(OnBodyEntered)));
+		GD.Print("Killzone ready");
 	}
 	public void OnBodyEntered(Node2D body)
 	{
