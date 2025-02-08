@@ -29,6 +29,7 @@
 2. [Using Godot + C# + Visual Studio Code](https://www.youtube.com/watch?v=Yi1iIM-B7XQ)
 3. [Setup C# Godot 4 Build and Debugging in VS Code | Quick guide + DETAILED explanations](https://www.youtube.com/watch?v=PhrwjHdsALM)
 4. [Smooth Up & Down Stair Handling | Godot 4 FPS Controller Tutorial](https://www.youtube.com/watch?v=Tb-R3l0SQdc)
+5. [Godot from Zero (Tutorial) — Part 4 Camera & Score](https://www.youtube.com/watch?v=0nATn-MgI0E)
 
 ## Other Readme documents
 
