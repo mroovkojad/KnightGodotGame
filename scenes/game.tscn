@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://d38ck5q24ndto"]
+[gd_scene load_steps=20 format=4 uid="uid://d38ck5q24ndto"]
 
 [ext_resource type="PackedScene" uid="uid://ctqexyv40xg63" path="res://scenes/player.tscn" id="1_1yo8n"]
 [ext_resource type="Texture2D" uid="uid://bkkyfegu7sl6v" path="res://assets/sprites/world_tileset.png" id="2_klwu2"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b6xsxwxpxov5r" path="res://scenes/coin.tscn" id="5_x52jk"]
 [ext_resource type="PackedScene" uid="uid://xhksn2hmpyo0" path="res://scenes/killzone.tscn" id="6_ksvmx"]
 [ext_resource type="PackedScene" uid="uid://dtm3q25wivw83" path="res://scenes/purple_slime.tscn" id="8_b4b7f"]
+[ext_resource type="PackedScene" uid="uid://bdbewvuymbopm" path="res://scenes/stats.tscn" id="8_s1vlw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_71v4e"]
 texture = ExtResource("2_klwu2")
@@ -395,6 +396,9 @@ _data = {
 
 [node name="Game" type="Node2D"]
 
+[node name="Stats" parent="." instance=ExtResource("8_s1vlw")]
+unique_name_in_owner = true
+
 [node name="Tiles" type="Node" parent="."]
 
 [node name="Sky" type="TileMapLayer" parent="Tiles"]
@@ -412,12 +416,6 @@ tile_set = SubResource("TileSet_hlasa")
 
 [node name="Player" parent="." instance=ExtResource("1_1yo8n")]
 position = Vector2(-135, 64)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(0, -6)
-zoom = Vector2(4, 4)
-limit_bottom = 130
-position_smoothing_enabled = true
 
 [node name="Coins" type="Node" parent="."]
 

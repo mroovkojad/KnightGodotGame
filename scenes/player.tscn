@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://ctqexyv40xg63"]
+[gd_scene load_steps=27 format=3 uid="uid://ctqexyv40xg63"]
 
 [ext_resource type="Script" path="res://srcipts/Player.cs" id="1_jluut"]
 [ext_resource type="Texture2D" uid="uid://cnsplvrtacjpg" path="res://assets/sprites/knight.png" id="1_we352"]
@@ -26,10 +26,6 @@ region = Rect2(96, 64, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_7l6jk"]
 atlas = ExtResource("1_we352")
 region = Rect2(128, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1lti7"]
-atlas = ExtResource("1_we352")
-region = Rect2(64, 192, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_45frm"]
 atlas = ExtResource("1_we352")
@@ -120,9 +116,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7l6jk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1lti7")
 }],
 "loop": true,
 "name": &"jump",
@@ -195,8 +188,12 @@ position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_55q6y")
 animation = &"jump"
 autoplay = "idle"
-frame_progress = 0.964145
+frame_progress = 0.572622
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7.5)
 shape = SubResource("RectangleShape2D_jc175")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+position_smoothing_enabled = true
