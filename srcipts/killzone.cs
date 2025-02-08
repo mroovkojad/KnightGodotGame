@@ -15,11 +15,14 @@ public partial class killzone : Area2D
 	public void OnBodyEntered(Node2D body)
 	{
 		GD.Print("You died!");
+		Engine.TimeScale = 0.5f;
+		body.GetNode("CollisionShape2D").QueueFree();
 		timer.Start();
 	}
 
 	private void OnTimerTimeout()
 	{
+		Engine.TimeScale = 1.0f;
 		GD.Print("Works");
 		GetTree().ReloadCurrentScene();
 	}
