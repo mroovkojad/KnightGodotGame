@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dtm3q25wivw83"]
+[gd_scene load_steps=10 format=3 uid="uid://dtm3q25wivw83"]
 
 [ext_resource type="Texture2D" uid="uid://ckr0ypdotvsfy" path="res://assets/sprites/slime_purple.png" id="1_ouyx1"]
+[ext_resource type="Script" path="res://srcipts/PurpleSlime.cs" id="1_rlgtd"]
 [ext_resource type="PackedScene" uid="uid://xhksn2hmpyo0" path="res://scenes/killzone.tscn" id="2_qlw0r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nsk5y"]
@@ -43,6 +44,7 @@ animations = [{
 size = Vector2(20, 25.9253)
 
 [node name="PurpleSlime" type="Node2D"]
+script = ExtResource("1_rlgtd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 4
@@ -59,3 +61,13 @@ position = Vector2(0, -5.1162)
 rotation = 3.14159
 scale = Vector2(0.489463, -0.37676)
 shape = SubResource("RectangleShape2D_jyqfl")
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(-1, -6)
+rotation = 1.54673
+target_position = Vector2(-0.168442, 6.99797)
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(0, -6)
+rotation = 0.109059
+target_position = Vector2(6.95841, -0.761901)

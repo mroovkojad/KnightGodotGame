@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://d38ck5q24ndto"]
+[gd_scene load_steps=19 format=4 uid="uid://d38ck5q24ndto"]
 
 [ext_resource type="PackedScene" uid="uid://ctqexyv40xg63" path="res://scenes/player.tscn" id="1_1yo8n"]
 [ext_resource type="Texture2D" uid="uid://bkkyfegu7sl6v" path="res://assets/sprites/world_tileset.png" id="2_klwu2"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://b6xsxwxpxov5r" path="res://scenes/coin.tscn" id="5_x52jk"]
 [ext_resource type="PackedScene" uid="uid://xhksn2hmpyo0" path="res://scenes/killzone.tscn" id="6_ksvmx"]
 [ext_resource type="PackedScene" uid="uid://dtm3q25wivw83" path="res://scenes/purple_slime.tscn" id="8_b4b7f"]
-[ext_resource type="PackedScene" path="res://scenes/slime.tscn" id="9_c6pb7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_71v4e"]
 texture = ExtResource("2_klwu2")
@@ -477,13 +476,13 @@ libraries = {
 }
 autoplay = "position"
 
-[node name="PurpleSlime" parent="." instance=ExtResource("8_b4b7f")]
+[node name="Enemies" type="Node" parent="."]
+
+[node name="PurpleSlime" parent="Enemies" instance=ExtResource("8_b4b7f")]
 z_index = 4
 position = Vector2(-183, 80)
 
-[node name="Slime" parent="." instance=ExtResource("9_c6pb7")]
-z_index = 1
-position = Vector2(-153, 80)
-script = null
+[node name="PurpleSlime" parent="." instance=ExtResource("8_b4b7f")]
+position = Vector2(-256, 80)
 
 [connection signal="body_entered" from="KillZones/Killzone" to="KillZones/Killzone" method="OnBodyEntered"]
