@@ -478,7 +478,7 @@ autoplay = "position"
 
 [node name="Enemies" type="Node" parent="."]
 
-[node name="PurpleSlime1" parent="Enemies" instance=ExtResource("8_b4b7f")]
+[node name="PurpleSlime" parent="Enemies" instance=ExtResource("8_b4b7f")]
 z_index = 4
 position = Vector2(-183, 80)
 
