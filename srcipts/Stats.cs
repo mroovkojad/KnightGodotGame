@@ -9,13 +9,13 @@ public partial class Stats : CanvasLayer
 	public override void _Ready()
 	{
 		coinCount = 0;
-		coinCountLabel = GetNode<Label>("%coinCountLabel");
-		coinCountLabel.Text = "Coin count: " + coinCount;
+		coinCountLabel = GetNode<Label>("%CoinCountLabel");
+		coinCountLabel.Text = ": "+ coinCount;
 	}
 
 	public void AddPoint()
 	{
 		coinCount += 1;
-		coinCountLabel.Text = "Coin count: " + coinCount;	// Add a point to the player's stats.
+		coinCountLabel.Text = ": " + coinCount;	// Add a point to the player's stats.
 	}
 }
