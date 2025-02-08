@@ -114,7 +114,7 @@ size = Vector2(10, 12)
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_tcnho")
 animation = &"idle"
-autoplay = "spawn"
+autoplay = "idle"
 frame_progress = 0.881443
 
 [node name="Killzone" parent="AnimatedSprite2D" instance=ExtResource("2_v53tt")]
