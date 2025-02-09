@@ -20,7 +20,6 @@ public partial class MainMenu : Control
 		startButton.Connect("pressed", new Callable(this, nameof(OnStartPressed)));
 		optionsButton.Connect("pressed", new Callable(this, nameof(OnOptionsPressed)));
 		exitButton.Connect("pressed", new Callable(this, nameof(OnExitGamePressed)));
-
 	}
 	private void OnStartPressed()
 	{
@@ -29,16 +28,13 @@ public partial class MainMenu : Control
 
 	private void OnOptionsPressed()
 	{
-		GD.Print("Options pressed");
 		SceneManager.instance.ChangeScene(MainScenes.Options);
 	}
 
 	private void OnExitGamePressed()
 	{
-	    GetTree().Quit();
+        GetTree().Quit();
 	}
-
-
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
