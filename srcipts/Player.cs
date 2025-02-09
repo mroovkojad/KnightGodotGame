@@ -52,7 +52,7 @@ public partial class Player : CharacterBody2D
 		if (Input.IsActionJustPressed("escape_to_menu"))
 		{
 			GD.Print("Escape button pressed");
-			GetTree().ChangeSceneToFile("res://Scenes/Menu/MainMenu.tscn");
+			SceneManager.instance.ChangeScene(MainScenes.MainMenu);
 		}
 	}
 	public override void _PhysicsProcess(double delta)

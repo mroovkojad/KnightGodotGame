@@ -39,22 +39,35 @@ public partial class SceneManager : Node
     public  void DeferredChangeScene(MainScenes sceneEnum)
     {
         // It is now safe to remove the current scene.
-        CurrentScene.Free();
+        GD.Print("Freeing current scene.");
+        try
+        {
+            CurrentScene.Free();
+        }
+        catch (Exception ex)
+        {
+            GD.PrintErr("Error freeing current scene: " + ex.Message);
+        }
 
         // Get the path to the scene from the dictionary.
         string path = ScenePaths[sceneEnum];
+        GD.Print("Scene path: " + path);
 
         // Load a new scene.
         var nextScene = GD.Load<PackedScene>(path);
+        GD.Print("Scene loaded.");
 
         // Instance the new scene.
         CurrentScene = nextScene.Instantiate();
+        GD.Print("Scene instantiated.");
 
         // Add it to the active scene, as child of root.
         GetTree().Root.AddChild(CurrentScene);
+        GD.Print("Scene added to root.");
 
         // Optionally, to make it compatible with the SceneTree.change_scene_to_file() API.
         GetTree().CurrentScene = CurrentScene;
+        GD.Print("Current scene set.");
     }
 
 }
