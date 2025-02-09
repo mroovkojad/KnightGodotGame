@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://emoo3q3bqcj0"]
+
+[ext_resource type="PackedScene" uid="uid://c13cb285s35hu" path="res://scenes/coin_animated_sprite.tscn" id="1_xvj08"]
+
+[node name="CoinViewport" type="SubViewport"]
+size = Vector2i(32, 32)
+
+[node name="CoinAnimatedSprite" parent="." instance=ExtResource("1_xvj08")]
+frame_progress = 0.730981
+offset = Vector2(16, 16)
