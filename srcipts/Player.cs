@@ -47,6 +47,14 @@ public partial class Player : CharacterBody2D
 		}
 	}
 
+	public override void _Process(double delta)
+	{
+		if (Input.IsActionJustPressed("escape_to_menu"))
+		{
+			GD.Print("Escape button pressed");
+			GetTree().ChangeSceneToFile("res://Scenes/Menu/MainMenu.tscn");
+		}
+	}
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector2 velocity = Velocity;

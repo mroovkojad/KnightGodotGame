@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bt6kmpryylbih"]
+
+[ext_resource type="FontFile" uid="uid://c7t0dju5sx0gq" path="res://assets/fonts/pixelOperator/PixelOperator8.ttf" id="1_gxnkb"]
+
+[node name="MenuButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_fonts/font = ExtResource("1_gxnkb")
+theme_override_font_sizes/font_size = 32
