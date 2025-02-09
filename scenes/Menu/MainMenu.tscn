@@ -55,4 +55,5 @@ layout_mode = 2
 text = "Exit Game"
 
 [connection signal="pressed" from="VBoxContainer2/CenterContainer/VBoxContainer/Start" to="." method="OnStartPressed"]
+[connection signal="pressed" from="VBoxContainer2/CenterContainer/VBoxContainer/Options" to="." method="OnOptionsPressed"]
 [connection signal="pressed" from="VBoxContainer2/CenterContainer/VBoxContainer/ExitGame" to="." method="OnExitGamePressed"]

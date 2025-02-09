@@ -24,14 +24,13 @@ public partial class MainMenu : Control
 	}
 	private void OnStartPressed()
 	{
-		GD.Print("Start button pressed");
         sceneManager.ChangeScene(MainScenes.Game);
- 	   // GetTree().ChangeSceneToFile("res://Scenes/game.tscn");
 	}
 
 	private void OnOptionsPressed()
 	{
-		GD.Print("Test");
+		GD.Print("Options pressed");
+		SceneManager.instance.ChangeScene(MainScenes.Options);
 	}
 
 	private void OnExitGamePressed()

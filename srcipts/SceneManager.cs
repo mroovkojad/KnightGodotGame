@@ -2,6 +2,7 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
+// Enum to represent the main scenes of the game, that can be used as main view.
 public enum MainScenes
     {
         MainMenu,
@@ -11,10 +12,11 @@ public enum MainScenes
 public partial class SceneManager : Node
 {
 
+    // Dictionary to store the paths of the main scenes.
     Dictionary<MainScenes, string> ScenePaths = new Dictionary<MainScenes, string> {
     { MainScenes.MainMenu, "res://Scenes/Menu/MainMenu.tscn" },
     { MainScenes.Game, "res://Scenes/Game.tscn" },
-    { MainScenes.Options, "res://Scenes/Options.tscn" },
+    { MainScenes.Options, "res://Scenes/Menu/OptionsMenu.tscn" },
 };
 
     public Node CurrentScene { get; set; }
@@ -29,12 +31,12 @@ public partial class SceneManager : Node
         instance = this;
     }
 
-    public void ChangeScene(MainScenes sceneEnum)
+    public  void ChangeScene(MainScenes sceneEnum)
     {
         CallDeferred(MethodName.DeferredChangeScene,  Variant.From(sceneEnum));
     }
 
-    public void DeferredChangeScene(MainScenes sceneEnum)
+    public  void DeferredChangeScene(MainScenes sceneEnum)
     {
         // It is now safe to remove the current scene.
         CurrentScene.Free();
