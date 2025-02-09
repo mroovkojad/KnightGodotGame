@@ -13,7 +13,7 @@ public partial class Stats : CanvasLayer
 		coinCountLabel.Text = ": "+ coinCount;
 	}
 
-	public void AddPoint()
+	public void AddCoin()
 	{
 		coinCount += 1;
 		coinCountLabel.Text = ": " + coinCount;	// Add a point to the player's stats.
