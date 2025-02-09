@@ -29,6 +29,10 @@ window/size/viewport_height=768
 
 project/assembly_name="KnightGodotGame"
 
+[gui]
+
+theme/custom_font="res://assets/fonts/pixelOperator/PixelOperator8.ttf"
+
 [input]
 
 jump={
