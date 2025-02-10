@@ -13,22 +13,11 @@ public partial class OptionsMenu : Control
 
 		try
 		{
-			GD.Print("Getting music node...");
 			music = GetNode<AudioStreamPlayer2D>("/root/Music");
-
-			GD.Print("Getting music checkbox...");
 			musicCheckBox = (CheckBox) GetNode<CheckBox>("%MusicCheckBox");
-
-			GD.Print("Connecting music checkbox toggled signal...");
 			musicCheckBox.Connect("toggled", new Callable(this, nameof(OnMusicCheckBoxToggled)));
-
-			GD.Print("Getting exit button...");
 			exitButton = GetNode<Button>("%ExitButton");
-
-			GD.Print("Connecting exit button pressed signal...");
 			exitButton.Connect("pressed", new Callable(this, nameof(OnExitButtonPressed)));
-
-			GD.Print("Setting music checkbox state...");
 			musicCheckBox.ButtonPressed = music.Playing;
 		}
 		catch (Exception ex)
