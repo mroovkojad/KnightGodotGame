@@ -1,16 +1,24 @@
 using Godot;
 using System;
 
-public partial class OptionsMenu : Control
+public partial class OptionsMenu : Control, ISavable
 {
 	CheckBox musicCheckBox;
 
-	Button exitButton;
-	AudioStreamPlayer2D music;
+	private Button exitButton;
+	private ConfigFile optionsFile = new ConfigFile();
+	[Export]
+	private string optionsFileName;
+
+	private string optionsFilePath;
+	[Export]
+	private AudioStreamPlayer2D music;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-
+		optionsFileName = "options.cfg";
+		optionsFilePath = "user://" + optionsFileName;
+		Load();
 		try
 		{
 			music = GetNode<AudioStreamPlayer2D>("/root/Music");
@@ -39,8 +47,30 @@ public partial class OptionsMenu : Control
 		}
 	}
 
+	public void Save()
+	{
+		optionsFile.SetValue("music", "enabled", music.Playing);
+		optionsFile.Save(optionsFilePath);
+		GD.Print("Options Saved:");
+		GD.Print("Music enabled: " + music.Playing);
+	}
+	public void Load()
+	{
+		if (optionsFile.Load(optionsFilePath) == Error.Ok)
+		{
+			musicCheckBox.ButtonPressed = (bool) optionsFile.GetValue("music", "enabled", music.Playing);
+			GD.Print("Options Loaded:");
+			GD.Print("Music enabled: " + music.Playing);
+		}
+		else
+		{
+			Save();
+		}
+	}
+
 	private void OnExitButtonPressed()
 	{
 		SceneManager.instance.ChangeScene(MainScenes.MainMenu);
 	}
+
 }
