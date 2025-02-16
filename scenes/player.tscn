@@ -1,7 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://ctqexyv40xg63"]
+[gd_scene load_steps=28 format=3 uid="uid://ctqexyv40xg63"]
 
 [ext_resource type="Script" path="res://srcipts/Player.cs" id="1_jluut"]
 [ext_resource type="Texture2D" uid="uid://cnsplvrtacjpg" path="res://assets/sprites/knight.png" id="1_we352"]
+[ext_resource type="PackedScene" uid="uid://cdkt8i5otfnx4" path="res://scenes/sword.tscn" id="3_npoe2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_460f6"]
 atlas = ExtResource("1_we352")
@@ -186,9 +187,12 @@ script = ExtResource("1_jluut")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_55q6y")
-animation = &"jump"
+animation = &"run"
 autoplay = "idle"
-frame_progress = 0.572622
+frame_progress = 0.47686
+
+[node name="Sword" parent="." instance=ExtResource("3_npoe2")]
+position = Vector2(11, -12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7.5)
