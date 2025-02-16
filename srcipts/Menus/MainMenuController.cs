@@ -8,14 +8,11 @@ public partial class MenuController : Node
     public override void _Ready()
     {
         _model = new MainMenuModel();
-        _view = GetNode<MainMenuView>("MenuView");
-
-        _view.OptionSelected += OnOptionSelected;
+        _view = GetNode<MainMenuView>("MainMenuView");
     }
 
     private void OnOptionSelected(int index)
     {
-        _model.SelectOption(index);
         ExecuteOption(index);
     }
 

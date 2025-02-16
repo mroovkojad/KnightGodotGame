@@ -1,9 +1,5 @@
-public class MainMenuModel{
-    public string[] Options = {"Start", "Options", "ExitGame"};
-    public int SelectedIndex { get; private set; } = 0;
+public class MainMenuModel{public string[] Options { get; private set; }
 
-    public void SelectOption(int index){
-        SelectedIndex = index;
-    }
+    public MainMenuModel() => Options = new[] { "Start Game", "Options", "Exit Game" };
 
 }
