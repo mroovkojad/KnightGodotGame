@@ -4,9 +4,9 @@ using System;
 public partial class MainMenu : Control
 {
 	// Called when the node enters the scene tree for the first time.
-	Button startButton;
-	Button optionsButton;
-	Button exitButton;
+	private Button startButton;
+	private Button optionsButton;
+	private Button exitButton;
 	SceneManager sceneManager; public override void _Ready()
 	{
 		sceneManager = (SceneManager)GetNode<SceneManager>("/root/SceneManager");
@@ -29,10 +29,12 @@ public partial class MainMenu : Control
 
 	private void ShowExitConfirmationDialog()
 	{
+		GD.Print("Exit confirmation dialog shown");
 		ExitConfirmationDialog exitConfirmationDialog = new ExitConfirmationDialog();
 		this.AddChild(exitConfirmationDialog);
 		exitConfirmationDialog.PopupCentered();
 		exitConfirmationDialog.Show();
+
 	}
 
 	private void OnExitGamePressed()
