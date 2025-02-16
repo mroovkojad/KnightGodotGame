@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=4 uid="uid://d38ck5q24ndto"]
+[gd_scene load_steps=23 format=4 uid="uid://d38ck5q24ndto"]
 
 [ext_resource type="PackedScene" uid="uid://ctqexyv40xg63" path="res://scenes/player.tscn" id="1_1yo8n"]
 [ext_resource type="PackedScene" uid="uid://bq5qrdp0llc32" path="res://scenes/Menu/MainMenu.tscn" id="1_hp5ig"]
+[ext_resource type="Script" path="res://srcipts/Menus/MainMenuView.cs" id="2_6y5c1"]
 [ext_resource type="Texture2D" uid="uid://bkkyfegu7sl6v" path="res://assets/sprites/world_tileset.png" id="2_klwu2"]
 [ext_resource type="PackedScene" uid="uid://dqkd3t2tqkg51" path="res://scenes/platform.tscn" id="3_mwxcd"]
 [ext_resource type="PackedScene" uid="uid://ddr2ce2vtw4bn" path="res://scenes/animatedYellowPlatform.tscn" id="4_rvt5r"]
@@ -400,6 +401,7 @@ _data = {
 
 [node name="MainMenu" parent="." instance=ExtResource("1_hp5ig")]
 z_index = -18
+script = ExtResource("2_6y5c1")
 
 [node name="Stats" parent="." instance=ExtResource("8_s1vlw")]
 unique_name_in_owner = true

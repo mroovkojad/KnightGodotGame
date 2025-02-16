@@ -7,13 +7,9 @@ public partial class MainMenu : Control
 	Button startButton;
 	Button optionsButton;
 	Button exitButton;
-
-	SceneManager sceneManager;
-
-
-	public override void _Ready()
+	SceneManager sceneManager; public override void _Ready()
 	{
-	    sceneManager = (SceneManager) GetNode<SceneManager>("/root/SceneManager");
+		sceneManager = (SceneManager)GetNode<SceneManager>("/root/SceneManager");
 		startButton = GetNode<Button>("Start");
 		optionsButton = GetNode<Button>("Options");
 		exitButton = GetNode<Button>("ExitGame");
@@ -23,7 +19,7 @@ public partial class MainMenu : Control
 	}
 	private void OnStartPressed()
 	{
-        sceneManager.ChangeScene(MainScenes.Game);
+		sceneManager.ChangeScene(MainScenes.Game);
 	}
 
 	private void OnOptionsPressed()
@@ -31,13 +27,16 @@ public partial class MainMenu : Control
 		SceneManager.instance.ChangeScene(MainScenes.Options);
 	}
 
-	private void OnExitGamePressed()
+	private void ShowExitConfirmationDialog()
 	{
-        GetTree().Quit();
+		ExitConfirmationDialog exitConfirmationDialog = new ExitConfirmationDialog();
+		this.AddChild(exitConfirmationDialog);
+		exitConfirmationDialog.PopupCentered();
+		exitConfirmationDialog.Show();
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+	private void OnExitGamePressed()
 	{
+		ShowExitConfirmationDialog();
 	}
 }

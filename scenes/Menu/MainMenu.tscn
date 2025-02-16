@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bq5qrdp0llc32"]
 
-[ext_resource type="Script" path="res://srcipts/MainMenu.cs" id="1_04m18"]
+[ext_resource type="Script" path="res://srcipts/Menus/MainMenu.cs" id="1_v6ugp"]
 [ext_resource type="FontFile" uid="uid://cwaoiyvngtpqo" path="res://assets/fonts/pixelOperator/PixelOperator8-Bold.ttf" id="1_vt5tb"]
 [ext_resource type="PackedScene" uid="uid://bt6kmpryylbih" path="res://scenes/Menu/MenuButton.tscn" id="2_xl7ht"]
 
@@ -11,7 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_04m18")
+script = ExtResource("1_v6ugp")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 1
