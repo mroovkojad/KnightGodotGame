@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bte06ns7utswx"]
+
+[ext_resource type="Script" path="res://srcipts/LevelBoundry.cs" id="1_nkfd5"]
+
+[node name="LevelBoundry" type="Node"]
+script = ExtResource("1_nkfd5")
