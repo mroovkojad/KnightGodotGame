@@ -31,6 +31,7 @@
 4. [Smooth Up & Down Stair Handling | Godot 4 FPS Controller Tutorial](https://www.youtube.com/watch?v=Tb-R3l0SQdc)
 5. [Godot from Zero (Tutorial) — Part 4 Camera & Score](https://www.youtube.com/watch?v=0nATn-MgI0E)
 6. [Create MAIN MENU for your Godot game](https://www.youtube.com/watch?v=zHYkcJyE52g)
+7. [Godot 4 C# Tutorial #1 - Save / Load / Delete System](https://www.youtube.com/watch?v=UuEqUN98uZo)
 
 ## Other Readme documents
 
