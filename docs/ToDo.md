@@ -2,6 +2,9 @@
 
 ## Menus
 
+- [X] Add Theme Manager
+- [ ] Use Theme Manager for all menu sizes and styles
+
 ### Main Menu
 
 #### Considered Patterns
@@ -35,3 +38,8 @@
     - takes dimensions as input parameters
 - Generator
 - Editor
+
+## Enemies
+
+- [x] Add gravity to slimes
+- [x] Detect and do not fall on 'high' edges
