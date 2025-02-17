@@ -4,8 +4,8 @@ using System.Reflection.Metadata.Ecma335;
 
 public partial class Player : CharacterBody2D
 {
-	public const float Speed = 130.0f;
-	public const float JumpVelocity = -300.0f;
+	private const float Speed = 130.0f;
+	private const float JumpVelocity = -300.0f;
 	AnimatedSprite2D animatedSprite;
 	public override void _Ready()
 	{
