@@ -1,5 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://c4y7tggdsv1uk"]
 
+[ext_resource type="Script" path="res://srcipts/enemies/GreenSlime.cs" id="1_8sev7"]
 [ext_resource type="Texture2D" uid="uid://brmg4mwko40c3" path="res://assets/sprites/slime_green.png" id="1_d71e2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8qdum"]
@@ -123,25 +124,34 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_k551s"]
-resource_name = "idle"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_0i61a"]
-_data = {
-"idle": SubResource("Animation_k551s")
-}
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u40d3"]
+size = Vector2(10, 10)
 
 [node name="GreenSlime" type="CharacterBody2D"]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../AnimatedSprite2D")
+script = ExtResource("1_8sev7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_5rshc")
 animation = &"idle"
-frame_progress = 0.639199
+frame_progress = 0.626411
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_0i61a")
-}
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_u40d3")
+
+[node name="RayCastDownRight" type="RayCast2D" parent="."]
+position = Vector2(12, -6)
+target_position = Vector2(0, 61)
+
+[node name="RayCastDownLeft" type="RayCast2D" parent="."]
+position = Vector2(-12, -6)
+target_position = Vector2(0, 61)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(0, -7)
+target_position = Vector2(-8, 0)
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(0, -7)
+target_position = Vector2(8, 0)

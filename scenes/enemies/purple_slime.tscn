@@ -51,7 +51,7 @@ z_index = 4
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_8xaqy")
 autoplay = "default"
-frame_progress = 0.917442
+frame_progress = 0.40042
 
 [node name="Killzone" parent="." instance=ExtResource("2_qlw0r")]
 
