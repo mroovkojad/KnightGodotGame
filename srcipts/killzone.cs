@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Killzone : Area2D
+public partial class killzone : Area2D
 {
 	private Timer timer;
 
