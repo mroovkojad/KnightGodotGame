@@ -48,7 +48,6 @@ public partial class Bottle : Node2D
 		if (_colorFrameMap.TryGetValue(Color, out int frame))
 		{
 			_animatedSprite.Frame = frame;
-			GD.Print($"Frame set to {frame}");
 		}
 		else
 		{
