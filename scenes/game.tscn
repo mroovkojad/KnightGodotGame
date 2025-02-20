@@ -1,14 +1,15 @@
-[gd_scene load_steps=22 format=4 uid="uid://d38ck5q24ndto"]
+[gd_scene load_steps=23 format=4 uid="uid://d38ck5q24ndto"]
 
 [ext_resource type="PackedScene" uid="uid://ctqexyv40xg63" path="res://scenes/player.tscn" id="1_1yo8n"]
 [ext_resource type="PackedScene" uid="uid://bq5qrdp0llc32" path="res://scenes/menus/MainMenu.tscn" id="1_hp5ig"]
 [ext_resource type="Texture2D" uid="uid://bkkyfegu7sl6v" path="res://assets/sprites/world_tileset.png" id="2_klwu2"]
 [ext_resource type="PackedScene" uid="uid://dqkd3t2tqkg51" path="res://scenes/platform.tscn" id="3_mwxcd"]
 [ext_resource type="PackedScene" uid="uid://ddr2ce2vtw4bn" path="res://scenes/animatedYellowPlatform.tscn" id="4_rvt5r"]
-[ext_resource type="PackedScene" uid="uid://b6xsxwxpxov5r" path="res://scenes/coin.tscn" id="5_x52jk"]
+[ext_resource type="PackedScene" path="res://scenes/items/coin.tscn" id="5_x52jk"]
 [ext_resource type="PackedScene" uid="uid://xhksn2hmpyo0" path="res://scenes/killzone.tscn" id="6_ksvmx"]
 [ext_resource type="PackedScene" uid="uid://dtm3q25wivw83" path="res://scenes/enemies/purple_slime.tscn" id="8_b4b7f"]
 [ext_resource type="PackedScene" uid="uid://bdbewvuymbopm" path="res://scenes/stats.tscn" id="8_s1vlw"]
+[ext_resource type="PackedScene" uid="uid://tjp34r0i5aw7" path="res://scenes/items/bottle.tscn" id="11_m0kvm"]
 [ext_resource type="PackedScene" uid="uid://c4y7tggdsv1uk" path="res://scenes/enemies/green_slime.tscn" id="12_fllqs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_71v4e"]
@@ -501,5 +502,14 @@ position = Vector2(-135, -64)
 
 [node name="GreenSlime" parent="Enemies" instance=ExtResource("12_fllqs")]
 position = Vector2(-327, -64)
+
+[node name="Items" type="Node" parent="."]
+
+[node name="Bottle1" parent="Items" instance=ExtResource("11_m0kvm")]
+position = Vector2(-39, 40)
+
+[node name="Bottle2" parent="Items" instance=ExtResource("11_m0kvm")]
+position = Vector2(-71, 40)
+Color = 0
 
 [connection signal="body_entered" from="KillZones/BottomKillZone" to="KillZones/BottomKillZone" method="OnBodyEntered"]
