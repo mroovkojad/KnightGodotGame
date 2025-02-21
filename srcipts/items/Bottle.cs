@@ -22,7 +22,10 @@ public partial class Bottle : Node2D
 		set
 		{
 			_color = value;
-			UpdateSpriteColor();
+			if (_animatedSprite != null)
+			{
+				UpdateSpriteColor();
+			}
 		}
 	}
 	private BottleColor _color = BottleColor.Green;
@@ -35,7 +38,6 @@ public partial class Bottle : Node2D
 		{ BottleColor.Pink, 2 },
 		{ BottleColor.Blue, 3 }
 	};
-
 
 	public override void _Ready()
 	{
