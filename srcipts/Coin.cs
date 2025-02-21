@@ -8,8 +8,12 @@ public partial class Coin : Area2D
 	public override void _Ready()
 	{
 		stats = GetNode<Stats>("%Stats");
-		Connect("body_entered", new Callable(this, nameof(OnBodyEntered)));
+		if (!IsConnected("body_entered", new Callable(this, nameof(OnBodyEntered))))
+		{
+			Connect("body_entered", new Callable(this, nameof(OnBodyEntered)));
+		}
 		animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
+		GD.Print("Coin ready");
 	}
 	public void OnBodyEntered(Node2D body){
 		stats.AddCoin();
